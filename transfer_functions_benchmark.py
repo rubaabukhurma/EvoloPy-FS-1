@@ -52,6 +52,57 @@ def s4(x):
     s4=1 / (1 + np.exp(-x/2))
     return s4
 
+##______________________z-shaped transfer functions_______________________
+
+def z1(x):
+    
+        z1=np.sqrt(1-(2**x))
+        return z1
+
+def z2(x):
+    z2 =np.sqrt(1-(5**x))
+    return z2
+# s2 is called logistic function and can be imported using scipy.special.expit(x) library
+
+def z3(x):
+    z3=np.sqrt(1-(8**x))
+    return z3
+
+
+def z4(x):
+    z4=np.sqrt(1-(20**x))
+    return z4
+
+##________________________the x-shaped functions_________________________
+
+def xx1(x):
+    
+        xx1=1/(1+np.exp(x))
+        return xx1
+
+def xx2(x):
+    xx2 =1/(1+np.exp(-x))
+    return xx2
+##________________________the U-shaped functions_________________________
+
+#def U1(x):
+    
+#        U1=abs(x*pow(x,1.5))
+#        return U1
+
+def U2(x):
+    U2 =abs(x**2)
+    return U2
+
+def U3(x):
+    
+        U3=abs(x**3)
+        return U3
+
+def U4(x):
+    U4 =abs(x**4)
+    return U4
+
 
 ##________________________the sigmoid functions_________________________
 
