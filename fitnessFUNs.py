@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import Binarizer
 from sklearn import metrics
-          
+from sklearn.metrics import roc_auc_score          
 #____________________________________________________________________________________       
 def FN1(I,trainInput,trainOutput,dim):            
          data_train_internal, data_test_internal, target_train_internal, target_test_internal = train_test_split(trainInput, trainOutput, test_size=0.34, random_state=1)
@@ -29,8 +29,8 @@ def FN1(I,trainInput,trainOutput,dim):
          target_pred_internal = knn.predict(reduced_data_test_internal)
          acc_train = float(accuracy_score(target_test_internal, target_pred_internal))
        
-         fitness=0.99*(1-acc_train)+0.01*sum(I)/(dim)
-
+         fitness=0.99*(1-acc_train)+0.01*sum(I)/(dim) #feature selection fitness function
+         # fitness=float(roc_auc_score(target_test_internal, target_pred_internal)) # AUC
          return fitness
 #_____________________________________________________________________       
 def getFunctionDetails(a):
